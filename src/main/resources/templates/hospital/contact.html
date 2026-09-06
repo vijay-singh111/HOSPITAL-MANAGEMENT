@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="hospital/hospitalbase::layout(~{::section})">
+
+<head>
+	<title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
+	<meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+	<link rel="shortcut icon" href="favicon.ico">
+
+
+
+</head>
+
+<body>
+	<section >
+	
+		<!-- Section: Design Block -->
+		<section>
+			<div class="page-ttl">
+			     <div class="layer-stretch">
+			         <div class="page-ttl-container">
+			             <h1>Contact Us</h1>
+			             <p><a href="#">Home</a> &#8594; <span>Contact Us</span></p>
+			         </div>
+			     </div>
+			 </div><!-- End Page Title Section -->
+			 <!-- Start Contact Detail Section -->
+			 <div id="contact-page" class="layer-stretch">
+			     <div class="layer-wrapper">
+			         <div class="row text-center">
+			             <div class="col-md-6 col-lg-3 contact-info-block">
+			                 <div class="contact-info-inner">
+			                     <i class="fa fa-plus-square-o"></i>
+			                     <span>APPOINTMENT</span>
+			                     <p class="paragraph-medium paragraph-black">+ 01 1122 333 333</p>
+			                     <p>appointment@yourdomain.com </p>
+			                 </div>
+			             </div>
+			             <div class="col-md-6 col-lg-3 contact-info-block">
+			                 <div class="contact-info-inner">
+			                     <i class="fa fa-phone"></i>
+			                     <span>Call Us</span>
+			                     <p class="paragraph-medium paragraph-black">+ 01 1122 333 333</p>
+			                     <p>+ 01 1122 333 333 </p>
+			                 </div>
+			             </div>
+			             <div class="col-md-6 col-lg-3 contact-info-block">
+			                 <div class="contact-info-inner">
+			                     <i class="fa fa-envelope"></i>
+			                     <span>Email Us</span>
+			                     <p class="paragraph-medium paragraph-black">sales@yourdomain.com</p>
+			                     <p>support@yourdomain.com </p>
+			                 </div>
+			             </div>
+			             <div class="col-md-6 col-lg-3 contact-info-block">
+			                 <div class="contact-info-inner">
+			                     <i class="fa fa-map-marker"></i>
+			                     <span>Location</span>
+			                     <p class="paragraph-medium paragraph-black">Street name, City, State</p>
+			                     <p class="paragraph-medium paragraph-black">Country, Pincode</p>
+			                 </div>
+			             </div>
+			         </div>
+			     </div>
+			 </div><!-- End Contact Detail Section -->
+			 <!-- Start Request Form Section -->
+			 <div id="contact-form" class="layer-stretch">
+			     <div class="layer-wrapper">
+			         <div class="layer-ttl">
+			             <h3>Make a Contact</h3>
+			         </div>
+			         <div class="contact-form row text-center">
+			             <div class="col-sm-10 mx-auto">
+			                 <div class="row">
+			                     <div class="col-md-6 px-5">
+			                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+			                             <i class="fa fa-user-o"></i>
+			                             <input id="contact-name" class="mdl-textfield__input" type="text"
+			                                 pattern="[A-Z,a-z, ]*">
+			                             <label class="mdl-textfield__label" for="contact-name">Your Name</label>
+			                             <span class="mdl-textfield__error">Please Enter Valid Name!</span>
+			                         </div>
+			                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+			                             <i class="fa fa-envelope-o"></i>
+			                             <input class="mdl-textfield__input" type="text"
+			                                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="contact-email">
+			                             <label class="mdl-textfield__label" for="contact-email">Your Email</label>
+			                             <span class="mdl-textfield__error">Please Enter Valid Email!</span>
+			                         </div>
+			                     </div>
+			                     <div class="col-md-6 px-5">
+			                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+			                             <i class="fa fa-phone"></i>
+			                             <input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="contact-mobile">
+			                             <label class="mdl-textfield__label" for="contact-mobile">Your Mobile Number</label>
+			                             <span class="mdl-textfield__error">Please Enter Valid Mobile Number!</span>
+			                         </div>
+			                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+			                             <i class="fa fa-rocket"></i>
+			                             <input class="mdl-textfield__input" type="text" id="contact-subject">
+			                             <label class="mdl-textfield__label" for="contact-subject">Your Subject</label>
+			                             <span class="mdl-textfield__error">Please Enter Subject Related to Your Query!</span>
+			                         </div>
+			                     </div>
+			                     <div class="col-md-6 px-5 ">
+			                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+			                             <i class="fa fa-paper-plane"></i>
+			                             <textarea class="mdl-textfield__input" id="contact-address"></textarea>
+			                             <label class="mdl-textfield__label" for="contact-message">Your Address</label>
+			                             <span class="mdl-textfield__error">Please Enter Your Query!</span>
+			                         </div>
+			                     </div>
+			                     <div class="col-md-12 contact-error">
+
+			                     </div>
+			                     <div class="col-md-12">
+			                         <div class="form-submit">
+			                             <button
+			                                 class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary contact-submit">Submit
+			                                 your Query</button>
+			                         </div>
+			                     </div>
+			                 </div>
+			             </div>
+			         </div>
+			     </div>
+			 </div><!-- End Request Form Section -->
+			 <!-- Start Google Map Section -->
+			 <div id="map">
+			     <div class="map-wrapper">
+			         <div></div>
+			         <iframe id="map-container"
+			             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3589.0500692677115!2d82.02535927446705!3d25.90072450284819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a9744edcc88af%3A0xe6da55a4ebd804e8!2sGOVERNMENT%20POLYTECHNIC%20PREMDHAR%20PATTI%2C%20PRATAPGARH%20Official!5e0!3m2!1sen!2sin!4v1744055332199!5m2!1sen!2sin"
+			             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+			             referrerpolicy="no-referrer-when-downgrade"></iframe>
+			     </div>
+
+			 </div><!-- End Google Map Section -->
+		</section>
+		<!-- Section: Design Block -->	 
+	</section>
+</body>
+
+</html>

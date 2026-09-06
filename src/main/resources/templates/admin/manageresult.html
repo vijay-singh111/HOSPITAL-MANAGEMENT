@@ -1,0 +1,112 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+
+<head>
+</head>
+
+<body>
+	<section>
+
+		<div class="">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="card">
+					<div class="card-header mt-2">
+						<h1 class="mb-0 text-center text-primary">View Student</h1>
+
+					</div>
+					<div class="card-body mt-2">
+						<div class="table-responsive">
+							<table id="example3" class="table table-striped table-bordered" style="width:100%">
+								<thead>
+									<tr>
+										<th>
+											Name
+										</th>
+									
+										<th>
+											Contact
+										</th>
+										<th>
+											Email
+										</th>
+										<th>
+											Year
+										</th>
+										<th>
+											Branch
+										</th>
+										<th>
+											Program
+										</th>
+										<th>Total Marks</th>
+										<th>Get Marks</th>
+										<th>
+											Delete
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="r:${rlist}">
+										<td th:text="${r.name}"></td>
+									
+										<td th:text="${r.contactno}"></td>
+										<td th:text="${r.email}"></td>
+										<td th:text="${r.year}"></td>
+										<td th:text="${r.branch}"></td>
+										<td th:text="${r.program}"></td>
+										<td th:text="${r.totalmarks}"></td>
+										<td th:text="${r.getmarks}"></td>
+										<td>
+											<a th:href="@{manageresult/delete(username=${r.username})}">
+												<button type="button"
+													onclick="return confirm('Are you sure for delete?')"
+													class="btn btn-danger btn-sm">Delete</button>
+											</a>
+										</td>
+
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>
+											Id
+										</th>
+										<th>
+											Program
+										</th>
+										<th>
+											Branch
+										</th>
+										<th>
+											Year
+										</th>
+										<th>
+											Material Type
+										</th>
+										<th>
+											Subject
+										</th>
+										<th>
+											Topic
+										</th>
+										<th>
+											File Name
+										</th>
+										<th>
+											Delete
+										</th>
+
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+</body>
+
+
+</html>

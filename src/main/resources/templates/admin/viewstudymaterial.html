@@ -1,0 +1,117 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+
+<head>
+</head>
+
+<body>
+	<section>
+
+		<div class="">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<div class="card">
+						<div class="card-header mt-2">
+							<h1 class="mb-0 text-center text-primary">View Study Material</h1>
+					
+						</div>
+						<div class="card-body mt-2">
+							<div class="table-responsive">
+								<table id="example3" class="table table-striped table-bordered" style="width:100%">
+									<thead>
+										<tr>
+											<th>
+												Id
+											</th>
+											<th>
+												Program
+											</th>
+											<th>
+												Branch
+											</th>
+											<th>
+												Year
+											</th>
+											<th>
+												Material Type
+											</th>
+											<th>
+												Subject
+											</th>
+											<th>
+												Topic
+											</th>
+											<th>
+												File Name
+											</th>
+											<th>
+												Delete
+											</th>
+																		</tr>
+									</thead>
+									<tbody>
+										<tr th:each="m:${mlist}">
+											<td th:text="${m.id}"></td>
+											<td th:text="${m.program}"></td>
+											<td th:text="${m.branch}"></td>
+											<td th:text="${m.year}"></td>
+											<td th:text="${m.materialtype}"></td>
+											<td th:text="${m.subject}"></td>
+											<td th:text="${m.topic}"></td>
+											<td>
+												<a th:href="@{'/material/'+${m.filename}}" download>
+													<span th:text="${m.filename}"></span>
+												</a>
+											</td>
+											<td>
+												<a th:href="@{viewstudymaterial/deletematerial(id=${m.id})}">
+													<button type="button" onclick="return confirm('Are you sure for delete?')"
+														class="btn btn-danger btn-sm">Delete</button>
+												</a>
+											</td>
+											
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<th>
+												Id
+											</th>
+											<th>
+												Program
+											</th>
+											<th>
+												Branch
+											</th>
+											<th>
+												Year
+											</th>
+											<th>
+												Material Type
+											</th>
+											<th>
+												Subject
+											</th>
+											<th>
+												Topic
+											</th>
+											<th>
+												File Name
+											</th>
+											<th>
+												Delete
+											</th>
+											
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+		</div>
+		</section>
+
+</body>
+
+
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en" th:replace="base::layout(~{::section})">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+  </head>
+  <body>
+   <section>
+	<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+	<!-- Preloader -->
+	   <div class="preloader">
+	       <div class="loader">
+	           <div class="loader-outter"></div>
+	           <div class="loader-inner"></div>
+
+	           <div class="indicator">
+	               <svg width="16px" height="12px">
+	                   <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+	                   <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+	               </svg>
+	           </div>
+	       </div>
+	   </div>
+	   <!-- End Preloader -->
+	   <!-- Breadcrumbs -->
+	   	<div class="breadcrumbs overlay"
+	   		style="background-image: url(img/Contact.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
+
+	   		<div class="container">
+	   			<div class="bread-inner">
+	   				<div class="row">
+	   					<div class="col-12">
+	   						<h2>Contact Us</h2>
+	   						<ul class="bread-list">
+	   							<li><a href="index.html">Home</a></li>
+	   							<li><i class="icofont-simple-right"></i></li>
+	   							<li class="active">Contact Us</li>
+	   						</ul>
+	   					</div>
+	   				</div>
+	   			</div>
+	   		</div>
+	   	</div>
+	   	<!-- End Breadcrumbs -->
+
+	   	<!-- Start Contact Us -->
+	   	<div class="contact-us section">
+	   		<div class="container">
+	   			<div class="inner">
+	   				<div class="row">
+	   					<div class="col-lg-6">
+	   						<div class="contact-us-left">
+	   							<!--Start Google-map -->
+	   							<iframe id="myMap"
+	   								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231082.3152037242!2d82.63822190258254!3d25.180916112818775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e322990b81d57%3A0x187c3decd33a8727!2z4KSs4KSo4KS-4KSw4KS4IOCkueCkv-CkguCkpuClgiDgpK_gpYHgpKjgpL_gpLXgpLDgpY3gpLjgpL_gpJ_gpYA!5e0!3m2!1shi!2sin!4v1737314023709!5m2!1shi!2sin"
+	   								width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+	   								referrerpolicy="no-referrer-when-downgrade"></iframe>
+	   							<div id="">
+
+	   							</div>
+	   							<!--/End Google-map -->
+	   						</div>
+	   					</div>
+	   					<div class="col-lg-6">
+	   						<div class="contact-us-form">
+	   							<h2>Contact With Us</h2>
+	   							<p>If you have any questions please fell free to contact with us.</p>
+	   							<div id="success"></div>
+								   							<!-- Form -->
+	   							<form class="form shadow-0" id="contactForm" onsubmit="return submitForm(event)" method="post" th:object="${dto}">
+	   								<div class="row">
+	   									<div class="col-lg-6">
+	   										<div class="form-group">
+	   											<input type="text" id="name" placeholder="Your Name"  th:field="${dto.name}" required />
+
+	   										</div>
+	   									</div>
+	   									<div class="col-lg-6">
+	   										<div class="form-group">
+	   											<input type="email" id="email" placeholder=" Your Email" th:field="${dto.email}" required >
+
+	   										</div>
+	   									</div>
+	   									<div class="col-lg-6">
+	   										<div class="form-group">
+	   											<input type="text" placeholder="Phone" id="number" th:field="${dto.contactno}" required>
+	   										</div>
+	   									</div>
+	   									<div class="col-lg-6">
+	   										<div class="form-group">
+	   											<input type="text" id="subject" placeholder="Gender" th:field="${dto.gender}" required>
+
+	   										</div>
+	   									</div>
+	   									<div class="col-lg-12">
+	   										<div class="form-group">
+	   											<textarea id="message" placeholder="Message" th:field="${dto.enquirytext}" required></textarea>
+
+	   										</div>
+	   									</div>
+	   									<div class="col-12">
+	   										<div class="form-group login-btn">
+	   											<button class="btn" type="submit"
+												 id="sendMessageButton">Send</button>
+	   										</div>
+	   										<div class="checkbox">
+	   											<label class="checkbox-inline" for="2"><input name="news" id="2"
+	   													type="checkbox">Do you want to subscribe our Newsletter ?</label>
+	   										</div>
+	   									</div>
+	   								</div>
+	   							</form>
+	   							<!--/ End Form -->
+								<div th:if="${msg}">
+															                                <p th:text="${msg}"
+															                                   style="font-weight: 600; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color: rgb(255, 0, 0);"
+															                                    class="alert test-success alert-dismissible"></p>
+															                            </div>
+
+	   						</div>
+	   					</div>
+	   				</div>
+	   			</div>
+	   			<div class="contact-info">
+	   				<div class="row">
+	   					<!-- single-info -->
+	   					<div class="col-lg-4 col-12 ">
+	   						<div class="single-info">
+	   							<i class="icofont icofont-ui-call"></i>
+	   							<div class="content">
+	   								<h3>+(91) 6386554349</h3>
+	   								<p>info@univercity.com</p>
+	   							</div>
+	   						</div>
+	   					</div>
+	   					<!--/End single-info -->
+	   					<!-- single-info -->
+	   					<div class="col-lg-4 col-12 ">
+	   						<div class="single-info">
+	   							<i class="icofont-google-map"></i>
+	   							<div class="content">
+	   								<h3>Email Address</h3>
+	   								<p>unitedunivercity@gmail.com</p>
+	   							</div>
+	   						</div>
+	   					</div>
+	   					<!--/End single-info -->
+	   					<!-- single-info -->
+	   					<div class="col-lg-4 col-12 ">
+	   						<div class="single-info">
+	   							<i class="icofont icofont-email"></i>
+	   							<div class="content">
+	   								<h3></h3>
+	   								<p>univercity United Tower, Ground Floor, 53, Leader Road,
+	   									Prayagraj,
+	   									211003</p>
+	   							</div>
+	   						</div>
+	   					</div>
+	   					<!--/End single-info -->
+	   				</div>
+	   			</div>
+	   		</div>
+	   	</div>
+	   	<!--/ End Contact Us -->
+
+		<script>
+			/*function submitForm(event) {
+			    event.preventDefault(); // Prevents the form from submitting normally
+
+			    // Get form values
+				//const msg= document.getElementById('msg');
+			    const name = document.getElementById('name').value;
+			    const email = document.getElementById('email').value;
+			    const number = document.getElementById('number').value;
+			    const subject = document.getElementById('subject').value;
+			    const massage = document.getElementById('subject').value;
+
+			    // Simple validation
+			    if (!name || !email || !number || !subject || !massage) {
+			        Swal.fire({
+			            icon: 'error',
+			            title: 'Oops...',
+			            text: 'All fields are required!'
+			        });
+			        return false;
+			    }
+
+
+
+			    // Success message
+			    Swal.fire({
+			        icon: 'success',
+			       // title: 'Submited Successful!'
+				   title: 'Submited Successful!',
+			        text: `Welcome, ${name}! You .are sumiting`,
+			        showConfirmButton: true,
+			      //  timer: 2000
+			    }).then(() => {
+			        // Optionally, you can reset the form after success
+			       document.getElementById('contactForm').reset();
+			    });
+			    return true;
+			}*/
+
+		</script>
+	   	<!--/ End Contact Us -->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
+   </section>
+  </body>
+</html>

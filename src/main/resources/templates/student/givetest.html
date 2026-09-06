@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="student/studentbase::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+	<section>
+  
+		<style>
+			button:disabled {
+			           background-color: lightgray;
+			           cursor: not-allowed;
+			       }
+
+			       button {
+			           background-color: #4CAF50;
+			           color: white;
+			           border: none;
+			           padding: 10px 20px;
+			           cursor: pointer;
+			           font-size: 16px;
+			       }
+
+			       button:hover {
+			           background-color: #45a049;
+			       }
+		</style>
+    <div class="row p-3">
+       <div class="col-sm-12 shadow ps-4">
+    <div th:if="${msg}" class="text-center">
+		<p th:text="${msg}" style="color: red ; font-size: 25px;"></p>
+	</div>
+        <h3 class="ms-2 mt-3 fw-bold" style="color: orangered;">Important Intructions</h3>
+        <hr>
+        <p class="fw-bold">Kindly go through the below mentioned set of instruction before giving the online test </p>
+        <ul class="ms-2 fw-semibold">
+            <li>All question are compulsary.</li>
+            <li>This test is timer base, so manage your time efficiently and answer question quickly.</li>
+            <li>There is no negative making but avoid random gussing.</li>
+            <li>Do not open other tab or windows, as doing so will automatically submit your set.</li>
+            <li>Read each question carefully before answering.</li>
+            <li>The question are based on your syllabus.</li>
+            <li>Ensure a stable  internet connection throughout the test.</li>
+            <li>Have a backup power source in case of power outages.</li>
+            <li>Keep your student ID and login credentials ready before the test begins.</li>
+            <li>Make sure your devide is fully charget or plugged in.</li>
+            <li>Have a pen and paper ready for rough work if needed.</li>
+            <li>Log in to the test platform at least 10 minutes before the start time.</li>
+            <li>Familiarize yourself with the test interface beforehand.</li>
+            <li>If you encounter technical issuse, immediantaly notify the test proctor or technical support.</li>
+            <li>Avoid distractions and ensure you are in a quiet enviroment.</li>
+            <li>Use a comfortable and ergonomic setup to maintain focus the test</li>
+        </ul>
+
+        <input type="checkbox" id="terms">&nbsp;&nbsp;<span class="fw-bold" style="font-style: italic; font-size: 15px;">I hereby declare that I have all the impotant instruction mentioned above before giving the Online Internship Test</span> <br><br>
+    
+        <div class="text-center mb-4">
+			<a href="starttest"> <button type="button"  id="submitBtn" disabled class="btn  px-3" style="background-color: orangered;">Start Test</button></a>
+       
+  
+        </div>
+    
+    
+       </div> 
+    </div>
+  <script>
+	document.getElementById('terms').addEventListener('change', function () {
+	           var submitBtn = document.getElementById('submitBtn');
+	           if (this.checked) {
+	               submitBtn.disabled = false;
+	           } else {
+	               submitBtn.disabled = true;
+	           }
+	       });
+  </script>
+	</section>  
+</body>
+</html>

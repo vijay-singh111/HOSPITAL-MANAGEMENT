@@ -1,0 +1,173 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+</head>
+
+<body>
+	<section>
+		<form class="splash-container mt-1 mb-5" th:object="${dto}" method="post" enctype="multipart/form-data">
+			<div class="card" style="width: 27rem;">
+				<div class="card-header">
+					<h3 class="mb-1">Add Study material</h3>
+					<div th:if="${msg}">
+						<p th:text="${msg}" style="text-align: center; color: green;"></p>
+					</div>
+				</div>
+				<div class="card-body">
+
+					<div class="form-group">
+						<select class="form-control form-control-lg" th:field="${dto.program}" autocomplete="">
+							<option value="">...Select your progrm...</option>
+							<option value="Diploma">Diploma</option>
+							<option value="Btech">B-Tech</option>
+							<option value="Mtech">M-Tech</option>
+							<option value="BCA">BCA</option>
+							<option value="MCA">MCA</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<select class="form-control form-control-lg" th:field="${dto.branch}">
+							<option value="">...Select your branch...</option>
+							<option value="Computer Science">Computer Science</option>
+							<option value="Information Technology">Information Technology</option>
+							<option value="Civil">Civil</option>
+							<option value="Electronics">Electronics</option>
+							<option value="Mechanical">Mechanical</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<select class="form-control form-control-lg" th:field="${dto.year}">
+							<option value="">---Select your Year---</option>
+							<option value="1st year">1st Year</option>
+							<option value="2nd year">2nd Year</option>
+							<option value="3rd year">3rd Year</option>
+							<option value="4th year">4rt Year</option>
+							<option value="Finel year">Finel Year</option>
+
+						</select>
+					</div>
+					<div class="form-group">
+						<select class="form-control form-control-lg" th:field="${dto.materialtype}">
+							<option value="">...Select type...</option>
+							<option value="smat"> Study Material</option>
+							<option value="assign">Assign</option>
+
+
+						</select>
+					</div>
+					<div class="form-group">
+						<input class="form-control form-control-lg" th:field="${dto.subject}" type="text"
+							placeholder="subject..." autocomplete="off">
+					</div>
+					<div class="form-group">
+						<input class="form-control form-control-lg" type="text" th:field="${dto.topic}"
+							placeholder="Enter Topic.." autocomplete="off">
+					</div>
+					<div class="form-group">
+						<input class="form-control form-control-lg" type="file" th:field="${dto.filedata}"
+							placeholder="select file" autocomplete="off">
+					</div>
+					<div class="form-group pt-2">
+						<button class="btn btn-block btn-primary" type="submit">Add material</button>
+					</div>
+					<div class="form-group">
+						<label class="custom-control custom-checkbox">
+							<input class="custom-control-input" type="checkbox"><span class="custom-control-label">By
+								creating an account, you agree the <a href="#">terms
+									and conditions</a></span>
+						</label>
+					</div>
+
+				</div>
+
+			</div>
+		</form>
+
+
+		<!--<form class="splash-container " th:object="${dto}" method="post" enctype="multipart/form-data"  >
+				               <div class="card"  style="width: 27rem;">
+				                   <div class="card-header">
+				                       <h3 class="mb-1">Add material</h3>
+
+									   <div th:if="${msg}">
+									   	<p th:text="${msg}" style="text-align: center; color: green;"></p>
+									   </div>
+				                   </div>
+				                   <div class="card-body">
+
+				                       <div class="form-group">
+				                           <select class="form-control form-control-lg" th:field="${dto.program}" autocomplete="">
+				                               <option value="">...Select your progrm...</option>
+				                               <option value="Diploma">Diploma</option>
+				                               <option value="Btech">B-Tech</option>
+				                               <option value="Mtech">M-Tech</option>
+				                               <option value="BCA">BCA</option>
+				                               <option value="MCA">MCA</option>
+				                           </select>
+				                       </div>
+				                       <div class="form-group">
+				                           <select class="form-control form-control-lg" th:field="${dto.branch}">
+				                               <option value="">...Select your branch...</option>
+				                               <option value="Computer Science">Computer Science</option>
+				                               <option value="Information Technology">Information Technology</option>
+				                               <option value="Civil">Civil</option>
+				                               <option value="Electronics">Electronics</option>
+				                               <option value="Mechanical">Mechanical</option>
+				                           </select>
+				                       </div>
+				                       <div class="form-group">
+				                           <select class="form-control form-control-lg" th:field="${dto.year}">
+											<option value="">---Select your Year---</option>
+													                               <option value="1st Year">1st Year</option>
+													                               <option value="2nd Year">2nd Year</option>
+													                               <option value="3rd Year">3rd Year</option>
+													                               <option value="4th Year">4rt Year</option>
+													                               <option value="Finel Year">Finel Year</option>
+				                             
+				                           </select>
+				                       </div>
+				                       <div class="form-group">
+				                           <select class="form-control form-control-lg" th:field="${dto.materialtype}">
+				                               <option value="">...Select type...</option>
+				                               <option value="smat"> Study Material</option>
+				                               <option value="assign">Assign</option>
+
+
+				                           </select>
+				                       </div>
+				                       <div class="form-group">
+				                           <input class="form-control form-control-lg" th:field="${dto.subject}" type="text" placeholder="subject..."
+				                               autocomplete="off">
+				                       </div>
+				                       <div class="form-group">
+				                           <input class="form-control form-control-lg" type="text" th:field="${dto.topic}"
+				                               placeholder="Enter Topic.." autocomplete="off">
+				                       </div>
+				                       <div class="form-group">
+				                           <input class="form-control form-control-lg" type="file" th:field="${dto.filedata}"
+				                               placeholder="select file" autocomplete="off">
+				                       </div>
+				                       <div class="form-group pt-2">
+				                           <button class="btn btn-block btn-primary" type="submit">Add material</button>
+				                       </div>
+				                       <div class="form-group">
+				                           <label class="custom-control custom-checkbox">
+				                               <input class="custom-control-input" type="checkbox"><span
+				                                   class="custom-control-label">By creating an account, you agree the <a href="#">terms
+				                                       and conditions</a></span>
+				                           </label>
+				                       </div>
+
+				                   </div>
+
+				               </div>
+				           </form>-->
+
+	</section>
+</body>
+
+</html>

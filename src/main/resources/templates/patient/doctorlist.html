@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="patient/patientbase::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <section>
+	<!--<link rel="stylesheet" href="../hospital/patient.css">
+	<h2>Doctor Dashboard</h2>
+	<h1>Persons List</h1>
+	   <a href="/patient/addDoctor">Add New Person</a>
+	   <table>
+	       <thead>
+	           <tr>
+				<th>Id</th>
+	               <th>Name</th>
+	               <th>Age</th>
+				   <th>Father Name</th>
+				   <th>Gender</th>
+				   <th>Birth</th>
+				   <th>Email</th>
+	               <th>Actions</th>
+	           </tr>
+	       </thead>
+	       <tbody>
+	           <tr th:each="doctor : ${doctor}">
+				<td th:text="${doctor.id}"></td>
+	               <td th:text="${doctor.name}"></td>
+	               <td th:text="${doctor.age}"></td>
+				   <td th:text="${doctor.fname}"></td>
+				   <td th:text="${doctor.gender}"></td>
+				   <td th:text="${doctor.dob}"></td>
+				   <td th:text="${doctor.email}"></td>
+	               <td>
+	                  <a th:href="@{/patient/edit/{id}(id=${doctor.id})}">Edit</a> 
+	                   <a th:href="@{/patient/deleteDoctor/{id}(id=${doctor.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+	               </td>
+	           </tr>
+	       </tbody>
+	   </table>-->
+	   <div class="content container-fluid">
+
+	                 
+
+	                  <div class="row">
+	                      <div class="col-sm-12">
+	                          <div class="card">
+	                              <div class="card-body">
+									<a href="/patient/addDoctor" class="btn btn-success me-3">Add New Doctor</a>
+	                                  <div class="table-responsive">
+	                                      <table class="datatable table table-hover table-center mb-0">
+											<div th:if="${msg}">
+														<p th:text="${msg}" class="text-danger fs-5"></p>
+													</div>
+												
+	                                          <thead>
+	                                              <tr>
+	                                                  <th>ID</th>
+
+	                                                  <th>Doctor Name</th>
+	                                                  <th>Age</th>
+	                                                  <th>Date Of Birth</th>
+	                                                  <th>Gender</th>
+	                                                  <th>Specialization</th>
+	                                                  <th>Email</th>
+													  <th>Phone</th>
+	                                                  <th>Action</th>
+
+	                                              </tr>
+	                                          </thead>
+	                                          <tbody>
+	                                              <tr th:each="d : ${dlist}">
+	                                                  <td th:text="${d.id}"></td>
+	                                                  <td >
+	                                                      <h2 class="table-avatar">
+	                                                         <a class="avatar avatar-sm mr-2"><img
+	                                                                  class="avatar-img rounded-circle"
+	                                                                  th:src="@{'/doctor/'+${d.doctorpic}}"
+	                                                                  alt="User Image"></a>
+	                                                          <a th:text="${d.name}"></a>
+	                                                      </h2>
+	                                                  </td>
+
+	                                                  <td th:text="${d.age}"></td>
+	                                                  <td th:text="${d.dob}"></td>
+	                                                  <td th:text="${d.gender}"></td>
+	                                                  <td th:text="${d.Specialization}"></td>
+
+
+	                                                  <td th:text="${d.email}"></td>
+
+													  <td th:text="${d.phone}"></td>
+	                                                <td><a 	class="btn btn-sm bg-danger-light" th:href="@{doctorlist/delete(id=${d.id})}">	<i class="fe fe-trash"></i>Delete</a></td>
+	                                              </tr>
+	                                          </tbody>
+
+	                                      </table>
+	                                  </div>
+	                              </div>
+	                          </div>
+	                      </div>
+	                  </div>
+
+	              </div>
+   </section>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="hospital/hospitalbase::layout(~{::section})">
+
+<head>
+	<title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
+	<meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+	<link rel="shortcut icon" href="favicon.ico">
+
+
+
+</head>
+
+<body>
+	<section >
+	
+		<!-- Section: Design Block -->
+		<section>
+			<div class="page-ttl">
+			    <div class="layer-stretch">
+			        <div class="page-ttl-container">
+			            <h1>Login</h1>
+			            <p><a href="#">Home</a> &#8594; <span>Login</span></p>
+			        </div>
+			    </div>
+			</div><!-- End page Title Section -->
+			<!-- Start Login Section -->
+			<div id="login-page" class="layer-stretch">
+			    <div class="layer-wrapper">
+			       <form method="post" th:object="${dto}">
+					<div class="form-container">
+							            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+							                <i class="fa fa-envelope-o"></i>
+							                <input class="mdl-textfield__input" th:field="${dto.userid}" type="text"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+							                    id="login-email">
+							                <label class="mdl-textfield__label" for="login-email">Email <em> *</em></label>
+							                <span class="mdl-textfield__error">Please Enter Valid Email!</span>
+							            </div>
+							            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+							                <i class="fa fa-key"></i>
+							                <input class="mdl-textfield__input" th:field="${dto.password}" type="password" id="login-password">
+							                <label class="mdl-textfield__label" for="login-password">Password <em> *</em></label>
+							                <span class="mdl-textfield__error">Please Enter Valid Password!</span>
+							                <div class="forgot-pass">Forgot Password?</div>
+							            </div>
+										            <div class="form-submit">
+							                <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Login
+							                    Now</button>
+							            </div>
+							            <div class="or-using">Or Using</div>
+							            <div class="social-login">
+							                <a href="#" class="social-facebook"><i class="fa fa-facebook"></i>Facebook</a>
+							                <a href="#" class="social-google"><i class="fa fa-google"></i>Google</a>
+							            </div>
+							            <div class="login-link">
+							                <span class="paragraph-small">Don't have an account?</span>
+							                <a href="#" class="">Register as New User</a>
+							            </div>
+							        </div>
+				   </form>
+			    </div>
+			</div><!-- End Login Section -->
+		</section>
+		<!-- Section: Design Block -->	 
+	</section>
+</body>
+
+</html>

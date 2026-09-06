@@ -1,0 +1,140 @@
+<!DOCTYPE html >
+<html lang="en" th:replace="patient/patientbase::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+   
+
+   <section>
+
+	<!--<link rel="stylesheet" href="../hospital/patient.css">
+	<h2>Patient List</h2>
+	   <a href="/patient/addPatient">Add New Patient</a>
+
+	   <table>
+	       <thead>
+	           <tr>
+	               <th>Name</th>
+	               <th>Age</th>
+	               <th>Gender</th>
+	               <th>Address</th>
+	               <th>Actions</th>
+	           </tr>
+	       </thead>
+	       <tbody>
+	           <tr th:each="patient : ${patients}">
+	               <td th:text="${patient.fullname}"></td>
+	               <td th:text="${patient.age}"></td>
+	               <td th:text="${patient.gender}"></td>
+	               <td th:text="${patient.fulladdress}"></td>
+	               <td>
+	                   <a th:href="@{/patient/update/{id}(id=${patient.id})}" class="btn btn-success">Edit</a>
+	                   <a th:href="@{/patient/delete/{id}(id=${patient.id})}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this patient?')">Delete</a>
+	               </td>
+	           </tr>
+	       </tbody>
+	   </table>-->
+	   <div class="content container-fluid">
+
+	   				<!-- Page Header -->
+	   				<div class="page-header">
+	   					<div class="row">
+	   						<div class="col-sm-12">
+	   							<h3 class="page-title">List of Patient</h3>
+	   							<ul class="breadcrumb">
+	   								<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+	   						
+	   								<li class="breadcrumb-item active">Patient List</li>
+	   							</ul>
+	   						</div>
+	   					</div>
+	   				</div>
+	   				<!-- /Page Header -->
+
+	   				<div class="row">
+	   					<div class="col-sm-12">
+	   						<div class="card">
+	   							<div class="card-body">
+									<a href="/patient/addPatient" class="btn btn-success my-3">Add New Patient</a>
+	   								<div class="table-responsive">
+	   									<div class="table-responsive">
+	   									
+	   										<table class="datatable table table-hover table-center mb-0">
+	   											<thead>
+	   												<tr>
+	   													<th>Patient ID</th>
+	   													<th>Patient Name</th>
+	   													<th>Age</th>
+														<th>Gender</th>
+														<th>Blood</th>
+														<th>Email</th>
+
+	   													<th>Address</th>
+	   													<th>Conact</th>
+	   													<th>Date</th>
+	   													<th class="text-right">
+	   														<div class="actions">
+	   															<!--<a class="btn btn-sm bg-success-light" data-toggle="modal"
+	   																href="#edit_specialities_details">
+	   																<i class="fe fe-pencil"></i> Edit
+	   															</a>-->
+	   															<a data-toggle="modal" href="#delete_modal"
+	   																class="btn btn-sm bg-danger-light">
+	   																<i class="fe fe-trash"></i> Delete
+	   															</a>
+	   														</div>
+	   													</th>
+	   												</tr>
+	   											</thead>
+	   											<tbody>
+	   												
+	   												<tr th:each="p : ${plist}">
+	   													<td th:text="${p.id}"></td>
+	   													<td th:text="${p.name}"></td>
+	   													<td th:text="${p.age}"></td>
+	   													<td th:text="${p.gender}"></td>
+														<td th:text="${p.blood}"></td>
+														<td th:text="${p.email}"></td>
+	   													<td th:text="${p.address}"></td>
+														<td th:text="${p.contact}"></td>
+														<td th:text="${p.postdate}"></td>
+	   													<!--<td>
+	   														<a th:href="@{/patient/update/{id}(id=${patient.id})}"
+	   															class="btn btn-success">Edit</a>
+	   														<a th:href="@{/patient/delete/{id}(id=${patient.id})}"
+	   															class="btn btn-danger"
+	   															onclick="return confirm('Are you sure you want to delete this patient?')">Delete</a>
+	   													</td>-->
+	   													<td class="text-right">
+	   														<div class="actions">
+	   															<a class="btn btn-sm bg-success-light"
+	   													th:href="@{patientlist/update(id=${p.id})}">
+	   																<i class="fe fe-pencil"></i> Edit
+	   															</a>
+	   															<a th:href="@{patientlist/delete(id=${p.id})}"
+	   																onclick="return confirm('Are you sure you want to delete this patient?')"
+	   																class="btn btn-sm bg-danger-light">
+	   																<i class="fe fe-trash"></i> Delete
+	   															</a>
+	   														</div>
+	   													</td>
+	   												</tr>
+
+	   										</table>
+	   									</div>
+	   								</div>
+	   							</div>
+	   						</div>
+	   					</div>
+	   				</div>
+
+	   			</div>
+   </section>
+	
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+	<!-- Preloader - style you can find in spinners.css -->
+
+<style>
+	.pdf-container {
+	       border: 1px solid #ddd;
+	       padding: 20px;
+	       width: 500px;
+	       margin: auto;
+	   }
+
+	   .btn {
+	       margin-top: 20px;
+	       padding: 10px 20px;
+	       background: #007bff;
+	       color: white;
+	       border: none;
+	       cursor: pointer;
+	   }
+</style>
+
+
+		<!-- End Left Sidebar  -->
+		<!-- Page wrapper  -->
+
+		<!-- Bread crumb --
+	           <div class="row page-titles">
+	               <div class="col-md-5 align-self-center">
+	                   <h3 class="text-primary">Dashboard</h3>
+	               </div>
+	               <div class="col-md-7 align-self-center">
+	                   <ol class="breadcrumb">
+	                       <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+	                       <li class="breadcrumb-item active">Dashboard</li>
+	                   </ol>
+	               </div>
+	           </div>
+	           <!-- End Bread crumb -->
+		<!-- Container fluid  -->
+
+		<div class="row">
+			<div class="pdf-container" id="printArea">
+								     <h2>Patient Registration Details</h2>
+								     <p><strong>name:</strong> <span th:text="${sinfo.name}"></span></p>
+								     <p><strong>gender:</strong> <span th:text="${sinfo.gender}"></span></p>
+								     <p><strong>dob:</strong> <span th:text="${sinfo.dob}"></span></p>
+								     <p><strong>contact:</strong> <span th:text="${sinfo.contactno}"></span></p>
+								     <p><strong>email:</strong> <span th:text="${sinfo.email}"></span></p>
+								     <p><strong>branch:</strong> <span th:text="${sinfo.branch}"></span></p>
+								     <p><strong>course:</strong> <span th:text="${sinfo.program}"></span></p>
+								     <p><strong>state:</strong> <span th:text="${sinfo.country}"></span></p>
+								 </div>
+
+								 <button class="btn" onclick="printPDF()">Download as PDF</button>
+
+								 <script>
+								     function printPDF() {
+								         const originalContent = document.body.innerHTML;
+								         const printContent = document.getElementById("printArea").innerHTML;
+								         document.body.innerHTML = printContent;
+								         window.print();
+								         document.body.innerHTML = originalContent;
+								     }
+								 </script>
+		</div>
+
+		<!-- End PAge Content -->
+
+		<!-- End Container fluid  -->
+		<!-- footer -->
+
+
+		<!-- End Page wrapper  -->
+
+		<!-- End Wrapper -->
+		<!-- All Jquery -->
+
+
+	
+
+</body>
+
+</html>

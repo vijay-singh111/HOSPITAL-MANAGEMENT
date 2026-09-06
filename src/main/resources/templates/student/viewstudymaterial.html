@@ -1,0 +1,49 @@
+<html  th:replace="student/studentbase::layout(~{::section})">
+
+<head>
+</head>
+
+<body>
+	<section>
+
+		<h1 style="color: blue;" class="text-center">View study material</h1>
+		<table class="table table-border" style="width: 95%; margin: auto; margin-bottom: 250px;">
+
+		<thead>
+			<tr class="table-success">
+				<th>
+					Subject
+
+				</th>
+				<th>
+					Topic
+
+				</th>
+				<th>
+					File<i class="fas fa-fw fa-download"></i>
+
+				</th>
+				<th>
+					Posteddate
+
+				</th>
+
+
+			</tr>
+		</thead>
+		<tbody >
+			<tr th:each="m:${mlist}">
+				<td th:text="${m.subject}"></td>
+				<td th:text="${m.topic}"></td>
+				<td>
+					<a th:href="@{'/material/'+${m.filename}}" download><span th:text="${m.filename}"></span><i class="fas fa-fw fa-download"></i></a>
+				</td>
+				<td th:text="${m.posteddate}"></td>
+			</tr>
+			</tbody>
+		</table>
+
+	</section>
+</body>
+
+</html>

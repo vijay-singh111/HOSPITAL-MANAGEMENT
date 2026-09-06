@@ -1,0 +1,129 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+
+<head>
+</head>
+
+<body>
+	<section>
+
+		<div class="">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="card">
+					<div class="card-header mt-2">
+						<h1 class="mb-0 text-center text-primary">View Student</h1>
+
+					</div>
+					<div class="card-body mt-2">
+						<div class="table-responsive">
+							<table id="example3" class="table table-striped table-bordered" style="width:100%">
+								<thead>
+									<tr>
+										<th>
+											Name
+										</th>
+										<th>
+											Gender
+										</th>
+										<th>
+											Date of Birth
+										</th>
+
+										<th>
+											Contact
+										</th>
+										<th>
+											Email
+										</th>
+										<th>
+											Year
+										</th>
+										<th>
+											Branch
+										</th>
+										<th>
+											Program
+										</th>
+										<th>
+											State
+										</th>
+										<th>
+											Country
+										</th>
+										<th>
+											Delete
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="s:${slist}">
+										<td th:text="${s.name}"></td>
+										<td th:text="${s.gender}"></td>
+										<td th:text="${s.dob}"></td>
+										<td th:text="${s.contactno}"></td>
+										<td th:text="${s.email}"></td>
+										<td th:text="${s.year}"></td>
+										<td th:text="${s.branch}"></td>
+										<td th:text="${s.program}"></td>
+										<td th:text="${s.state}"></td>
+										<td th:text="${s.country}"></td>
+										<td>
+											<a th:href="@{viewstudent/delete(username=${s.username})}">
+												<button type="button"
+													onclick="return confirm('Are you sure for delete?')"
+													class="btn btn-danger btn-sm">Delete</button>
+											</a>
+										</td>
+
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>
+																	Name
+																</th>
+																<th>
+																	Gender
+																</th>
+																<th>
+																	Date of Birth
+																</th>
+
+																<th>
+																	Contact
+																</th>
+																<th>
+																	Email
+																</th>
+																<th>
+																	Year
+																</th>
+																<th>
+																	Branch
+																</th>
+																<th>
+																	Program
+																</th>
+																<th>
+																	State
+																</th>
+																<th>
+																	Country
+																</th>
+																<th>
+																	Delete
+																</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+</body>
+
+
+</html>

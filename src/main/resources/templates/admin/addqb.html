@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" th:replace="admin/adminbase::layout(~{::section})">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Online Test Portal</title>
+	
+</head>
+
+<body>
+	<section>
+			           <form class="splash-container" method="post" th:object="${dto}">
+		               <div class="card" style="width: 27rem;">
+		                   <div class="card-header">
+		                       <h3 class="mb-1">Add Questions</h3>
+							   <div th:if="${msg}">
+							   			                           <p th:text="${msg}" style="color: green; text-align: center;"></p>
+							   			                       </div>
+
+		                   </div>
+		                   <div class="card-body">
+
+		                       <div class="form-group">
+		                           <select class="form-control form-control-lg" th:field="${dto.year}" autocomplete="off">
+		                               <option value="">---Select your Year---</option>
+		                               <option value="1st year">1st Year</option>
+		                               <option value="2nd year">2nd Year</option>
+		                               <option value="3rd year">3rd Year</option>
+		                               <option value="4th year">4rt Year</option>
+		                               <option value="Finel year">Finel Year</option>
+		                           </select>
+		                       </div>
+		                       <div class="form-group">
+		                           <textarea class="form-control form-control-lg" th:field="${dto.question}"
+		                               placeholder="Enter Questions..." autocomplete="off"></textarea>
+		                       </div>
+		                       <div class="form-group">
+		                           <textarea class="form-control form-control-lg" th:field="${dto.a}"
+		                               placeholder="Enter Option... A" autocomplete="off"></textarea>
+		                       </div>
+		                       <div class="form-group">
+		                           <textarea class="form-control form-control-lg" th:field="${dto.b}"
+		                               placeholder="Enter Option... B" autocomplete="off"></textarea>
+		                       </div>
+		                       <div class="form-group">
+		                           <textarea class="form-control form-control-lg" th:field="${dto.c}"
+		                               placeholder="Enter Option... C" autocomplete="off"></textarea>
+		                       </div>
+		                       <div class="form-group">
+		                           <textarea class="form-control form-control-lg" th:field="${dto.d}"
+		                               placeholder="Enter Option... D" autocomplete="off"></textarea>
+		                       </div>
+		                       <div class="form-group">
+		                           <select class="form-control form-control-lg" th:field="${dto.correct}">
+		                               <option value="A">---select correct Answer---</option>
+		                               <option value="A">A</option>
+		                               <option value="B">B</option>
+		                               <option value="C">C</option>
+		                               <option value="D">D</option>
+		                           </select>
+		                       </div>
+
+
+
+		                       <div class="form-group pt-2">
+		                           <button class="btn btn-block btn-primary" type="submit">Add Question</button>
+		                       </div>
+		                       <div class="form-group">
+		                           <label class="custom-control custom-checkbox">
+		                               <input class="custom-control-input" type="checkbox"><span
+		                                   class="custom-control-label">By creating an account, you agree the <a href="#">terms
+		                                       and conditions</a></span>
+		                           </label>
+		                       </div>
+
+		                   </div>
+
+		               </div>
+		           </form>
+
+	</section>
+	
+</body>
+
+</html>
